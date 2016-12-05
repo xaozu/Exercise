@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="120dp"
+        android:layout_marginLeft="25dp"
+        android:orientation="vertical">
+        <TextView
+            style="@style/text_default_style"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="欢迎来到新家长"/>
+
+        <TextView
+            style="@style/text_default_style"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp"
+            android:text="我们只关心"/>
+        <TextView
+            style="@style/text_default_style"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"
+            android:text="孩子的心理健康"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_triangle_1"
+        android:layout_above="@+id/ll_text"
+        style="@style/img_default_style"
+        android:src="@mipmap/triangle_1"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="55dp"/>
+
+    <ImageView
+        android:layout_above="@+id/iv_triangle_1"
+        android:layout_toRightOf="@+id/iv_triangle_1"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/iv_triangle_2"
+        style="@style/img_default_style"
+        android:src="@mipmap/triangle_2"/>
+</RelativeLayout>

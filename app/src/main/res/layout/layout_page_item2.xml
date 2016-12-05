@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+
+        android:id="@+id/ll_page2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="62dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/text_default_style"
+            android:layout_marginTop="140dp"
+            android:text="我们致力于做什么？"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            style="@style/text_default_style"
+            android:layout_marginTop="15dp"
+            android:text="帮助新家庭养育出一个健康心理的孩子"
+            android:textSize="16sp"/>
+
+        <TextView
+            style="@style/text_default_style"
+            android:layout_marginTop="48dp"
+            android:text="我们这里有："
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            style="@style/text_default_style"
+            android:layout_marginTop="30dp"
+            android:text="个性化内容推荐"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            style="@style/text_default_style"
+            android:layout_marginTop="15dp"
+            android:text="为新家庭智能匹配养育指导内容"
+            android:textSize="16sp"/>
+
+        <TextView
+            style="@style/text_default_style"
+            android:layout_marginTop="30dp"
+            android:text="少儿心理咨询服务"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            style="@style/text_default_style"
+            android:layout_marginTop="15dp"
+            android:text="为新家庭提供少⼉心理专家服务，\n随时在线问答解忧"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</RelativeLayout>

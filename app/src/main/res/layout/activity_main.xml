@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="xz.exercise.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_head"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#FF3366">
+
+        <xz.exercise.WaveView3
+            android:id="@+id/wave_view"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_gravity="bottom" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:background="@mipmap/ic_launcher"
+            android:layout_marginBottom="15dp"/>
+
+    </FrameLayout>
+    <TextView
+        android:id="@+id/text"
+        android:layout_below="@+id/fl_head"
+        android:layout_marginTop="100dp"
+        android:clickable="true"
+        android:background="#EEEE"
+        android:padding="20dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"/>
+</RelativeLayout>
