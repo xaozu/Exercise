@@ -3,11 +3,14 @@ package xz.exercise.imagepage;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -28,10 +31,16 @@ import xz.exercise.base.BaseActivity;
  */
 
 public class ImageActivity extends BaseActivity {
-    ParallaxViewPager parallaxViewPager;
+    private ParallaxViewPager parallaxViewPager;
     private LinearLayout ll_o;
     private ImageView iv_triangle_1,iv_triangle_2;
-    List<View> views=new ArrayList<>();
+    private RelativeLayout rl_page2;
+    private LinearLayout ll_page2_content;
+    private LinearLayout ll_page3;
+    private List<View> views=new ArrayList<>();
+    private int curPage=0;
+    private int x,y;
+    private boolean isTouchHorizontal=false;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         //隐藏标题栏
@@ -53,6 +62,9 @@ public class ImageActivity extends BaseActivity {
         View view2=inflater.inflate(R.layout.layout_page_item2,null);
         iv_triangle_1= (ImageView) view.findViewById(R.id.iv_triangle_1);
         iv_triangle_2= (ImageView) view.findViewById(R.id.iv_triangle_2);
+        rl_page2= (RelativeLayout) view2.findViewById(R.id.rl_page2);
+        ll_page2_content= (LinearLayout) view2.findViewById(R.id.ll_page2_content);
+        ll_page3= (LinearLayout) findViewById(R.id.ll_page3);
         views.add(view);
         views.add(view2);
         parallaxViewPager
@@ -61,11 +73,14 @@ public class ImageActivity extends BaseActivity {
         parallaxViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                Log.i("滑动偏移","position "+position+"positionOffset "+positionOffset+"positionOffsetPixels "+positionOffsetPixels);
+
                 page1Anim(positionOffset*4, positionOffsetPixels);
             }
 
             @Override
             public void onPageSelected(int position) {
+                curPage=position;
                 setImageO(position);
             }
 
@@ -75,6 +90,86 @@ public class ImageActivity extends BaseActivity {
             }
         });
         initO();
+        parallaxViewPager.setOnTouchListener(new View.OnTouchListener() {
+            @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(curPage>0) {
+                    int curx = (int) event.getRawX();
+                    int cury = (int) event.getRawY();
+
+                    switch (event.getAction()){
+                        case MotionEvent.ACTION_DOWN://按下
+                            x= (int) event.getRawX();
+                            y= (int) event.getRawY();
+                            break;
+                        case MotionEvent.ACTION_MOVE://正在滑动
+                            int moveX=curx-x;
+                            int moveY=cury-y;
+                            if(Math.abs(moveX) > Math.abs(moveY)){//横向滑动
+                                isTouchHorizontal=true;
+                                //这里做虚化动画
+                            }else {
+                                isTouchHorizontal=false;
+                            }
+                            if(isTouchHorizontal){
+
+                            if(curPage==1 && moveX>0)
+                                return false;
+                            else
+                                page2Anim(moveX);
+
+                            }
+                            Log.i("滑动监听","curPage "+curPage+" x "+curx+" y "+cury+" moveX "+moveX);
+                            break;
+                        case MotionEvent.ACTION_UP: //滑动取消
+                        case MotionEvent.ACTION_CANCEL:
+                            int lastX=curx-x;
+                            if(curPage==1 && lastX>0) {
+                                ll_page3.setAlpha(0);
+                                ll_o.setAlpha(1);
+                                ll_page2_content.setVisibility(View.VISIBLE);
+                                return false;
+                            }
+                            if(isTouchHorizontal && lastX<-120){//确定是横向翻页
+                                curPage=2;
+                                ll_page3.setAlpha(1);
+                                ll_o.setAlpha(0);
+                                //虚化背景
+                                ll_page3.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                            }else {
+                                curPage=1;
+                                ll_page3.setAlpha(0);
+                                ll_o.setAlpha(1);
+                                ll_page2_content.setVisibility(View.VISIBLE);
+                            }
+                            break;
+                    }
+
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        });
+
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    private void page2Anim(float moveX){
+
+        float alpha=0.0f;
+        if(moveX<0) {
+            alpha=(-moveX)/200;
+            ll_page2_content.setVisibility(View.GONE);
+            ll_page3.setAlpha(alpha);
+            ll_o.setAlpha(1 - (alpha));
+        }else {
+            alpha=(moveX/200);
+            ll_page3.setAlpha(1-alpha);
+            ll_o.setAlpha(alpha);
+        }
+        Log.i("滑动监听","alpha "+alpha);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)

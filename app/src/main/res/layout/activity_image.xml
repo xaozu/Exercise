@@ -21,4 +21,36 @@
         android:layout_marginLeft="25dp">
 
     </LinearLayout>
+
+    <!-- 第三页的内容 -->
+    <LinearLayout
+        android:id="@+id/ll_page3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:alpha="0">
+
+        <TextView
+            style="@style/text_default_style"
+            android:text="选择身份体验新家长"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:padding="20dp"
+            />
+        <TextView
+            style="@style/text_default_style"
+            android:text="我是少儿心理咨询师"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="20dp"
+            />
+        <TextView
+            style="@style/text_default_style"
+            android:text="我是普通用户"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="20dp"
+            />
+    </LinearLayout>
 </RelativeLayout>

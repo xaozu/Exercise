@@ -2,15 +2,16 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/rl_page2">
 
     <LinearLayout
-
-        android:id="@+id/ll_page2"
+        android:id="@+id/ll_page2_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="62dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <TextView
             style="@style/text_default_style"
