@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        style="@style/lin_style_h"
+        android:layout_height="100dp">
+        <TextView
+            style="@style/text_default_style"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="用户名，随便填"
+        android:layout_margin="20dp"
+        android:padding="12dp"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="密码，随便填"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="12dp"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:layout_margin="20dp"
+        android:padding="12dp"/>
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="12dp"/>
+</LinearLayout>

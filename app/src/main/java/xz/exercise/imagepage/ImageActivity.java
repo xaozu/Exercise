@@ -27,7 +27,7 @@ import xz.exercise.base.BaseActivity;
 /**
  * Author：zhulunjun
  * Time：2016/12/2
- * description：
+ * description：有视差的引导页实现
  */
 
 public class ImageActivity extends BaseActivity {
@@ -41,6 +41,17 @@ public class ImageActivity extends BaseActivity {
     private int curPage=0;
     private int x,y;
     private boolean isTouchHorizontal=false;
+
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_image;
+    }
+
+    @Override
+    protected BaseActivity getActivity() {
+        return this;
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         //隐藏标题栏
@@ -53,7 +64,6 @@ public class ImageActivity extends BaseActivity {
         //设置当前窗体为全屏显示
         window.setFlags(flag, flag);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image);
         parallaxViewPager= (ParallaxViewPager) findViewById(R.id.prallax);
         ll_o= (LinearLayout) findViewById(R.id.ll_o);
 

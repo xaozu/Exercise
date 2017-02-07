@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
+apply plugin: 'com.jakewharton.butterknife'
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "xz.exercise"
-        minSdkVersion 9
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -22,9 +22,20 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:design:25.1.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 
     //控件注解
-    apt 'com.jakewharton:butterknife-compiler:8.2.1'
-    compile 'com.android.support:design:23.4.0'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+    //动画解析库
+    compile 'com.airbnb.android:lottie:1.0.1'
+
+    // LeanCloud 基础包 云服务器
+    compile ('cn.leancloud.android:avoscloud-sdk:v3.+')
+    compile ('cn.leancloud.android:avoscloud-statistics:v3.+')
+
+
 }

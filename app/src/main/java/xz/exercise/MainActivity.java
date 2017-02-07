@@ -2,20 +2,33 @@ package xz.exercise;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import butterknife.OnClick;
 import xz.exercise.base.BaseActivity;
 import xz.exercise.imagepage.ImageActivity;
+import xz.exercise.view.WaveView3;
 
 public class MainActivity extends BaseActivity {
     ImageView imageView;
+
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected BaseActivity getActivity() {
+        return this;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         WaveView3 waveView3= (WaveView3) findViewById(R.id.wave_view);
         imageView= (ImageView) findViewById(R.id.image);
 
@@ -28,11 +41,20 @@ public class MainActivity extends BaseActivity {
                 imageView.setLayoutParams(lp);
             }
         });
-        findViewById(R.id.text).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,ImageActivity.class));
-            }
-        });
+
+    }
+
+    @OnClick({R.id.text,R.id.tx_login})
+    public void myClick(View view){
+        switch (view.getId()){
+            case R.id.text:
+                startActivity(new Intent(getActivity(),ImageActivity.class));
+                break;
+            case R.id.tx_login:
+                startActivity(new Intent(getActivity(),LoginActivity.class));
+                break;
+            default:
+                break;
+        }
     }
 }

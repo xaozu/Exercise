@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/bg_toast"
+              android:padding="24dp"
+              android:gravity="center"
+    >
+
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_toast"-->
+        <!--style="@style/img_default_style"-->
+        <!--android:src="@mipmap/toast_success"-->
+        <!--/>-->
+    <TextView
+        android:id="@+id/tv_toast"
+        style="@style/text_default_style"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        android:singleLine="false"
+        android:text="保存成功"
+        />
+</LinearLayout>

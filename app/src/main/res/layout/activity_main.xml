@@ -12,7 +12,7 @@
         android:layout_height="200dp"
         android:background="#FF3366">
 
-        <xz.exercise.WaveView3
+        <xz.exercise.view.WaveView3
             android:id="@+id/wave_view"
             android:layout_width="match_parent"
             android:layout_height="15dp"
@@ -33,9 +33,20 @@
         android:layout_marginTop="100dp"
         android:clickable="true"
         android:background="#EEEE"
-        android:padding="20dp"
+        android:padding="12dp"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:text="视差引导页"/>
+    <TextView
+        android:id="@+id/tx_login"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:background="#EEEE"
+        android:padding="12dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登录"/>
 </RelativeLayout>

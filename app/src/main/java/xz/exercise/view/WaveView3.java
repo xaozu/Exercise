@@ -1,4 +1,4 @@
-package xz.exercise;
+package xz.exercise.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,7 +13,7 @@ import android.view.View;
 /**
  * Author：zhulunjun
  * Time：2016/12/1
- * description：
+ * description：模仿百度外卖个人信息页动画
  */
 
 public class WaveView3 extends View {

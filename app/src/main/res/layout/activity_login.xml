@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:orientation="vertical"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/et_name"
+        android:layout_marginTop="104dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="32dp"
+        android:inputType="textPersonName"
+        android:hint="用户名"
+        tools:text="用户名"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintLeft_toRightOf="@+id/tx_name"/>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/tx_name"
+        tools:text="用户名"
+        app:layout_constraintBottom_toBottomOf="@+id/et_name"
+        app:layout_constraintTop_toTopOf="@+id/et_name"
+        android:layout_marginStart="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="32dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"/>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/tx_password"
+        app:layout_constraintLeft_toLeftOf="@+id/tx_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="@+id/et_password"
+        app:layout_constraintRight_toLeftOf="@+id/et_password"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintTop_toTopOf="@+id/et_password"
+        tools:text="密码"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"/>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:inputType="textPersonName"
+        android:text="密码"
+        android:ems="10"
+        android:id="@+id/et_password"
+        app:layout_constraintRight_toRightOf="@+id/et_name"
+        app:layout_constraintLeft_toLeftOf="@+id/et_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_name"
+        android:layout_marginTop="32dp"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1"/>
+
+    <Button
+        android:text="登录"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/btn_login"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"/>
+
+</android.support.constraint.ConstraintLayout>
