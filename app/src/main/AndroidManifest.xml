@@ -26,6 +26,8 @@
         <activity android:name=".imagepage.ImageActivity"/>
         <activity android:name=".LottieActivity"/>
         <activity android:name=".LoginActivity"/>
+        <activity android:name=".ExceptionActivity"/>
+        <activity android:name=".TestActivity"/>
     </application>
 
 </manifest>

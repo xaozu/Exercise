@@ -2,7 +2,6 @@ package xz.exercise;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -44,7 +43,7 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.text,R.id.tx_login})
+    @OnClick({R.id.text,R.id.tx_login,R.id.tx_exption,R.id.tx_test})
     public void myClick(View view){
         switch (view.getId()){
             case R.id.text:
@@ -52,6 +51,12 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.tx_login:
                 startActivity(new Intent(getActivity(),LoginActivity.class));
+                break;
+            case R.id.tx_exption:
+                startActivity(new Intent(getActivity(),ExceptionActivity.class));
+                break;
+            case R.id.tx_test:
+                startActivity(new Intent(getActivity(),TestActivity.class));
                 break;
             default:
                 break;

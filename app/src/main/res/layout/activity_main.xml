@@ -49,4 +49,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="登录"/>
+
+    <TextView
+        android:id="@+id/tx_exption"
+        android:layout_below="@+id/tx_login"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:background="#EEEE"
+        android:padding="12dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="异常捕获"/>
+
+    <TextView
+        android:id="@+id/tx_test"
+        android:layout_below="@+id/tx_exption"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:background="#EEEE"
+        android:padding="12dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试"/>
 </RelativeLayout>
