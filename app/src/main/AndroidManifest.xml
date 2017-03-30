@@ -23,11 +23,21 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!-- 处于单独进程:xaozu的service  -->
+        <service android:name=".service.AidlService"
+            android:process=":xaozu">
+            <intent-filter>
+                <action android:name="action.xaozu"/>
+            </intent-filter>
+            </service>
+
         <activity android:name=".imagepage.ImageActivity"/>
         <activity android:name=".LottieActivity"/>
         <activity android:name=".LoginActivity"/>
         <activity android:name=".ExceptionActivity"/>
         <activity android:name=".TestActivity"/>
+        <activity android:name=".AidlActivity"/>
     </application>
 
 </manifest>

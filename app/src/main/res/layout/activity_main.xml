@@ -73,4 +73,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试"/>
+
+    <TextView
+        android:id="@+id/tx_aidl"
+        android:layout_below="@+id/tx_test"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:background="#EEEE"
+        android:padding="12dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="aidl进程间通信"/>
+
+
 </RelativeLayout>

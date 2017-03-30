@@ -4,12 +4,12 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 
 import com.avos.avoscloud.AVAnalytics;
 import com.avos.avoscloud.AVOSCloud;
 
 import xz.exercise.exception.Cockroach;
+import xz.exercise.utils.LogUtils;
 import xz.exercise.utils.ToastUtils;
 
 /**
@@ -50,7 +50,7 @@ public class App extends Application {
                     @Override
                     public void run() {
                         try {
-                            Log.d("Cockroach", thread + "\n" + throwable.toString());
+                            LogUtils.d("Cockroach "+thread + "\n" + throwable.toString());
                             throwable.printStackTrace();
                             ToastUtils.showDefault("Exception Happend\n" + thread + "\n" + throwable.toString());
 //                        throw new RuntimeException("..."+(i++));

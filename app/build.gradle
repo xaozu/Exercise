@@ -17,6 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/aidl']
+        }
+    }
 }
 
 dependencies {
@@ -37,5 +42,7 @@ dependencies {
     compile ('cn.leancloud.android:avoscloud-sdk:v3.+')
     compile ('cn.leancloud.android:avoscloud-statistics:v3.+')
 
+    //百分比布局
+    compile 'com.android.support:percent:25.1.1'
 
 }

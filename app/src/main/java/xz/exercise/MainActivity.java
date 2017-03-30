@@ -43,7 +43,7 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.text,R.id.tx_login,R.id.tx_exption,R.id.tx_test})
+    @OnClick({R.id.text,R.id.tx_login,R.id.tx_exption,R.id.tx_test,R.id.tx_aidl})
     public void myClick(View view){
         switch (view.getId()){
             case R.id.text:
@@ -57,6 +57,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.tx_test:
                 startActivity(new Intent(getActivity(),TestActivity.class));
+                break;
+            case R.id.tx_aidl:
+                startActivity(new Intent(getActivity(),AidlActivity.class));
                 break;
             default:
                 break;
